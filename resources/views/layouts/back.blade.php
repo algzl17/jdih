@@ -87,8 +87,8 @@
                             <li>
                                 <div class="main-header-profile bg-primary menu-header-content text-fixed-white">
                                     <div class="my-auto">
-                                        <h6 class="mb-0 lh-1 text-fixed-white">Petey Cruiser</h6><span
-                                            class="fs-11 op-7 lh-1">Premium Member</span>
+                                        <h6 class="mb-0 lh-1 text-fixed-white">{{ Auth::user()->name ?? '-' }}</h6>
+                                        <span class="fs-11 op-7 lh-1">{{ Auth::user()->role_id }}</span>
                                     </div>
                                 </div>
                             </li>
@@ -105,10 +105,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex" href="profile.html">
-                                    <i class="bx bx-user-circle fs-18 me-2 op-7"></i>
+                                <a href="javascript:void(0)"
+                                    onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+                                    class="dropdown-item d-flex">
+                                    <i class="fa-solid fa-right-from-bracket fs-18 ms-2 me-2 op-7"></i>
                                     Keluar
                                 </a>
+                                <form id="logout-form" action="{{ route('min.logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
                             </li>
 
                         </ul>

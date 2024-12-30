@@ -8,7 +8,14 @@ Route::controller(Controllers\FrontController::class)->group(function () {
     Route::get('/', 'index');
 });
 
-Route::prefix('min')->name('min.')->group(function () {
+Route::controller(Controllers\AuthController::class)->group(function () {
+    Route::get('masuk', 'login')->name('login');
+    Route::post('masuk', 'login_post')->name('login.post');
+});
+
+Route::prefix('min')->middleware('auth')->name('min.')->group(function () {
+    Route::post('logout', [Controllers\AuthController::class, 'logout'])->name('logout');
+
     Route::controller(Controllers\HomeController::class)->group(function () {
         Route::get('/', 'index')->name('index');
     });
