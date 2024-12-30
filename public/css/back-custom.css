@@ -1,0 +1,11 @@
+.sidemenu_icon {
+    margin-inline-end: 0.875rem;
+    width: 1.375rem;
+    height: 1.375rem;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--menu-prime-color);
+    fill: var(--menu-prime-color);
+    line-height: unset;
+    border-radius: 0.3rem;
+}
