@@ -23,7 +23,6 @@ class StatusController extends Controller
 
             return DataTables::of($query)
                 ->addIndexColumn()
-
                 ->addColumn('action', function ($row) {
                     $btn = '<button onclick="editItem(' . $row->id_produk_status . ')" type="button" class="btn btn-icon btn-warning-transparent rounded-pill btn-wave"><i class="fa-solid fa-pen-to-square"></i></button>';
 
@@ -31,8 +30,6 @@ class StatusController extends Controller
                     if (!$pick) {
                         $btn .= '<button type="button" onclick="delItem(' . $row->id_produk_status . ')" class="btn btn-icon btn-danger-transparent rounded-pill btn-wave"><i class="fa-solid fa-trash"></i></button>';
                     }
-
-
                     return $btn;
                 })
                 ->rawColumns(['action'])
