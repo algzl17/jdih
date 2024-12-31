@@ -19,4 +19,8 @@ Route::prefix('min')->middleware('auth')->name('min.')->group(function () {
     Route::controller(Controllers\HomeController::class)->group(function () {
         Route::get('/', 'index')->name('index');
     });
+
+
+    // Master
+    Route::resource('master-status', Controllers\StatusController::class)->names('mst.status')->except(['show', 'create']);
 });

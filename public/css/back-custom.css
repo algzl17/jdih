@@ -9,3 +9,59 @@
     line-height: unset;
     border-radius: 0.3rem;
 }
+
+
+table.dataTable thead th,
+table.dataTable thead td {
+    text-align: center !important;
+}
+
+table.dataTable tbody td {
+    text-align: center;
+}
+
+.parsley-error {
+    border: 1px solid red;
+}
+
+.parsley-errors-list {
+    margin-bottom: 0px;
+    list-style: none;
+    padding: 0px;
+    font-size: 12px;
+    color: red;
+}
+
+.parsley-errors-list li {
+    margin-top: 1px;
+    margin-left: 1px;
+    /* text-transform: capitalize; */
+}
+
+.parsley-errors-list li::before {
+    content: "* ";
+}
+
+input:read-only {
+    background-color: rgba(220, 220, 220, 0.701);
+}
+
+.swal2-actions button {
+    border-radius: 50px !important;
+    padding: 3pt 17pt !important;
+}
+
+.swal2-cancel {
+    border: 1px solid #e4e4e4 !important;
+}
+.swal2-confirm {
+    margin-left: 5px !important;
+}
+
+.flatpickr-wrapper {
+    width: 100% !important;
+}
+
+.table-warning {
+    background: #fff3cd !important;
+}
